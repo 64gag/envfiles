@@ -7,6 +7,11 @@ set nocompatible
 " Shows commands you are typing
 set showcmd
 
+" Brightside settings! 
+set nobackup
+set nowritebackup
+set noswapfile
+
 set showmatch
 set autoindent smartindent
 set autochdir
@@ -46,16 +51,6 @@ set hlsearch
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
-
-"====[ Open any file with a pre-existing swapfile in readonly mode "]=========
-    augroup NoSimultaneousEdits
-        autocmd!
-        autocmd SwapExists * let v:swapchoice = 'o'
-        autocmd SwapExists * echomsg ErrorMsg
-        autocmd SwapExists * echo 'Duplicate edit session (readonly)'
-        autocmd SwapExists * echohl None
-        autocmd SwapExists * sleep 1
-    augroup END
 
 "=== Disable arrow keys! ===
 	noremap <Up> <NOP>
