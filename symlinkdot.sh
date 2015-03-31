@@ -3,5 +3,5 @@
 files="bashrc vimrc vimperatorrc"
 
 for file in $files; do
-    ln -s ~/dotfiles/$file ~/.$file
+    ln -s "$PWD/$file" ~/.$file
 done
