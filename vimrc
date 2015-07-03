@@ -7,7 +7,7 @@ set nocompatible
 " Shows commands you are typing
 set showcmd
 
-" Brightside settings! 
+" Brightside settings!
 set nobackup
 set nowritebackup
 set noswapfile
@@ -26,6 +26,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set noexpandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 " Make backspace work like most other apps
 set backspace=2
