@@ -74,3 +74,9 @@ inoremap jk <Esc>
 " Create blank newlines and stay in normal mode
 nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>
+
+" Untab using shift + tab
+inoremap <S-Tab> <C-D>
+
+" Yank to and paste from system clipboard by default
+set clipboard=unnamedplus
