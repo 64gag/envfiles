@@ -22,6 +22,10 @@ set noerrorbells visualbell t_vb=
 " Start next line with current indentation
 set autoindent
 
+" Filetype based syntax enabled
+filetype plugin on
+syntax on
+
 " Tab configuration for specific filetypes
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
@@ -77,6 +81,3 @@ nnoremap <silent> zk O<Esc>
 
 " Untab using shift + tab
 inoremap <S-Tab> <C-D>
-
-" Yank to and paste from system clipboard by default
-set clipboard=unnamedplus
