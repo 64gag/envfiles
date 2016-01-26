@@ -27,7 +27,7 @@ filetype plugin on
 syntax on
 
 " Tab configuration for specific filetypes
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby,eruby,css,html setlocal ts=2 sw=2 expandtab
 
 " Make backspace work like most other apps
 set backspace=2
@@ -53,7 +53,7 @@ map N Nzz
 map n nzz
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+exec "set listchars=tab:\uBB\uB7,trail:\uB7,nbsp:~"
 set list
 
 " Disable arrow keys
