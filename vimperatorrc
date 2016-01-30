@@ -1,10 +1,11 @@
-	nnoremap l gt
-	nnoremap h gT
-	nnoremap gh <C-o>
-	nnoremap gl <C-i>
-	nnoremap  ;  :
-	nnoremap  :  ;
-	noremap j 5j
-	noremap k 10k
-	set hintchars=asdfghjklqwertyuiop
-	normal <esc>
+nnoremap l gt
+nnoremap h gT
+nnoremap gh <C-o>
+nnoremap gl <C-i>
+nnoremap  ;  :
+nnoremap  :  ;
+noremap j 5j
+noremap k 10k
+set hintchars=asdfghjklqwertyuiop
+normal <esc>
+set titlestring=Iceweasel

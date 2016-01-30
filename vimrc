@@ -1,3 +1,6 @@
+" These two lines should probably be elsewhere
+" execute pathogen#infect()
+
 " Drop VI compatibility
 set nocompatible
 
@@ -11,7 +14,7 @@ set nohidden
 set showcmd
 
 " Change to file's directory
-set autochdir
+" set autochdir "Did not like this much anymore
 
 " Less actions trigger a redraw of the screen
 set lazyredraw
@@ -26,8 +29,13 @@ set autoindent
 filetype plugin on
 syntax on
 
-" Tab configuration for specific filetypes
-autocmd Filetype ruby,eruby,css,html setlocal ts=2 sw=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Tab configuration for specific filetypes (TODO: configure to good fits next
+" time I do C dev)
+autocmd Filetype c setlocal ts=2 sw=2 expandtab
 
 " Make backspace work like most other apps
 set backspace=2
@@ -37,7 +45,7 @@ autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Highlight 81st column of a line
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+autocmd BufNewFile,BufRead * call matchadd('ColorColumn', '\%81v', 100)
 
 " Display current row, col and line numbers
 set number ruler numberwidth=5
@@ -63,8 +71,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Swap ; and :
-nnoremap  ;  :
-nnoremap  :  ;
+noremap  ;  :
+noremap  :  ;
 
 " Swap v and CTRL-V, because block mode is more useful that visual mode
 nnoremap    v   <C-V>

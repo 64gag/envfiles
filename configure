@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Expand bashrc
+if [ -f ~/.bashrc ]; then
+  LINE="source ~/git/dotfiles/bashrc"
+  grep -q -F "$LINE" ~/.bashrc || echo $LINE >> ~/.bashrc
+fi
+
+files="vimrc vimperatorrc"
+for file in $files; do
+    ln -s "$PWD/$file" ~/.$file
+done
+
+# Done...
+echo "Relaunch your therminal."
