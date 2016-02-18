@@ -14,7 +14,7 @@ set nohidden
 set showcmd
 
 " Change to file's directory
-" set autochdir "Did not like this much anymore
+set autochdir
 
 " Less actions trigger a redraw of the screen
 set lazyredraw
@@ -44,11 +44,11 @@ set backspace=2
 autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Highlight 81st column of a line
-highlight ColorColumn ctermbg=magenta
-autocmd BufNewFile,BufRead * call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=magenta
+"autocmd BufNewFile,BufRead * call matchadd('ColorColumn', '\%81v', 100)
 
 " Display current row, col and line numbers
-set number ruler numberwidth=5
+set relativenumber ruler numberwidth=5
 
 " Search settings
 set ignorecase smartcase incsearch hlsearch
@@ -65,6 +65,10 @@ exec "set listchars=tab:\uBB\uB7,trail:\uB7,nbsp:~"
 set list
 
 " Disable arrow keys
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -89,3 +93,12 @@ nnoremap <silent> zk O<Esc>
 
 " Untab using shift + tab
 inoremap <S-Tab> <C-D>
+
+" Split related settings
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
