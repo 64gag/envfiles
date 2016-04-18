@@ -6,6 +6,6 @@ nnoremap  ;  :
 nnoremap  :  ;
 noremap j 5j
 noremap k 10k
-set hintchars=asdfghjklqwertyuiop
+set hintchars=asdfghjklwertyuiop
 normal <esc>
 set titlestring=Iceweasel

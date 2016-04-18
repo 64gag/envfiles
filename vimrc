@@ -1,5 +1,6 @@
-" These two lines should probably be elsewhere
-" execute pathogen#infect()
+if hostname() == 'paguiar-lap'
+  execute pathogen#infect()
+endif
 
 " Drop VI compatibility
 set nocompatible
@@ -15,6 +16,9 @@ set showcmd
 
 " Change to file's directory
 set autochdir
+
+" Write changes before running make
+set autowrite
 
 " Less actions trigger a redraw of the screen
 set lazyredraw
@@ -53,12 +57,16 @@ set relativenumber ruler numberwidth=5
 " Search settings
 set ignorecase smartcase incsearch hlsearch
 
-" Cancel matches highlights and redraw screen with C-L
-nnoremap <C-L> :nohlsearch<CR><C-L>
+" Cancel matches highlights and redraw screen with C-C
+nnoremap <C-C> :nohlsearch<CR><C-L>
 
 " Searches will center on the line it's found in.
 map N Nzz
 map n nzz
+
+" Search with less keystrokes
+noremap ;; :%s:::g<Left><Left><Left>
+noremap ;' :%s:::cg<Left><Left><Left><Left>
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
 exec "set listchars=tab:\uBB\uB7,trail:\uB7,nbsp:~"
@@ -74,9 +82,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" Swap ; and :
-noremap  ;  :
-noremap  :  ;
+" Map , to :
+noremap  ,  :
 
 " Swap v and CTRL-V, because block mode is more useful that visual mode
 nnoremap    v   <C-V>
@@ -97,8 +104,7 @@ inoremap <S-Tab> <C-D>
 " Split related settings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
+nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 set splitbelow
 set splitright
