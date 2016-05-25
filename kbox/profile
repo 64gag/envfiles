@@ -1,4 +1,6 @@
-# Find the profile file at /etc/
+# Find the profile file at /etc/ and source this file:
+# source /home/kbox/git/dotfiles/kbox/profile
+#
 export LANG=en_US.utf-8
 export GITSERVER=52.26.29.95
 export GIT_SSH=/home/kbox/bin/gitssh
