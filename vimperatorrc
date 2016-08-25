@@ -1,11 +1,18 @@
+" firefox > vimperator
+set titlestring=Firefox
+
+" navigation, my way
 nnoremap l gt
 nnoremap h gT
 nnoremap gh <C-o>
 nnoremap gl <C-i>
-nnoremap  ;  :
-nnoremap  :  ;
 noremap j 5j
 noremap k 10k
 set hintchars=asdfghjklwertyuiop
+
+nnoremap  ,  :
+nnoremap  :  ,
+
+" do not enter insert mode if not asked to!
+set focuscontent
 normal <esc>
-set titlestring=Iceweasel
