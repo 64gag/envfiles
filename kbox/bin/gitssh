@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh -i /home/kbox/.ssh/dropbear_priv_git_aws $*

@@ -1,6 +1,7 @@
-if hostname() == 'paguiar-lap'
+try
   execute pathogen#infect()
-endif
+catch
+endtry
 
 " Drop VI compatibility
 set nocompatible
@@ -13,9 +14,6 @@ set nohidden
 
 " Shows commands you are typing
 set showcmd
-
-" Change to file's directory
-set autochdir
 
 " Write changes before running make
 set autowrite
