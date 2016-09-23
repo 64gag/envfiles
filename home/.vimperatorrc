@@ -8,7 +8,7 @@ nnoremap gh <C-o>
 nnoremap gl <C-i>
 noremap j 5j
 noremap k 10k
-set hintchars=asdfghjklwertyuiop
+set hintchars=wertyuiopasdfghjkl
 
 nnoremap  ,  :
 nnoremap  :  ,
