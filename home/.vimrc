@@ -67,8 +67,8 @@ noremap ,, :%s:::g<Left><Left><Left>
 noremap ,' :%s:::cg<Left><Left><Left><Left>
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
-exec "set listchars=tab:\uBB\uB7,trail:\uB7,nbsp:~"
 set list
+set listchars=tab:\ \ ,trail:·,nbsp:~
 
 " Disable arrow keys
 inoremap <Up> <NOP>
