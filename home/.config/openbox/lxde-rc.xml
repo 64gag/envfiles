@@ -236,7 +236,7 @@
     <!-- Launch gnome-screenshot when PrintScreen is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>gnome-screenshot -i</command>
+        <command>~/git/dotfiles/scripts/screenshot</command>
       </action>
     </keybind>
     <!-- Launch LXRandR when Fn+Screen is pressed -->
