@@ -99,6 +99,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 set splitbelow
 set splitright
 
