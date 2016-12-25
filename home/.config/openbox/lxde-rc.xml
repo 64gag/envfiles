@@ -95,7 +95,8 @@
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>lxde-logout</command>
+        <!-- <command>lxde-logout</command> -->
+        <command>lxsession-default quit</command>
         <focus>yes</focus>
       </action>
     </keybind>
