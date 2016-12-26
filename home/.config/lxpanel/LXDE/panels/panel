@@ -63,10 +63,10 @@ Plugin {
   Config {
     Model=pc105
     LayoutsList=us,fr
-    VariantsList=,
-    ToggleOpt=grp:shift_caps_toggle
+    VariantsList=altgr-intl,
+    ToggleOpt=grp:lalt_lshift_toggle
     DisplayType=1
-    KeepSysLayouts=1
+    KeepSysLayouts=0
     FlagSize=1
   }
 }
