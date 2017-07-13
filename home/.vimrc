@@ -31,13 +31,13 @@ set autoindent
 filetype plugin on
 syntax on
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " Tab configuration for specific filetypes (TODO: configure to good fits next
 " time I do C dev)
-autocmd Filetype c setlocal ts=2 sw=2 expandtab
+autocmd Filetype c setlocal ts=4 sw=4 expandtab
 
 " Make backspace work like most other apps
 set backspace=2
@@ -48,6 +48,10 @@ autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
 " Highlight 81st column of a line
 "highlight ColorColumn ctermbg=magenta
 "autocmd BufNewFile,BufRead * call matchadd('ColorColumn', '\%81v', 100)
+
+" Highlight column and line
+set cursorcolumn
+set cursorline
 
 " Display current row, col and line numbers
 set relativenumber ruler numberwidth=5
@@ -62,9 +66,18 @@ nnoremap <C-C> :nohlsearch<CR><C-L>
 map N Nzz
 map n nzz
 
-" Search with less keystrokes
+" Allows to open files by name using (example): :find user_<TAB>
+set path=$PWD/**
+
+" Replace with less keystrokes
 noremap ,, :%s:::g<Left><Left><Left>
 noremap ,' :%s:::cg<Left><Left><Left><Left>
+
+" Less annoying conflict solving
+noremap ,ch :diffget LOCAL \| diffupdate<Enter>
+noremap ,cl :diffget REMOTE \| diffupdate<Enter>
+noremap ,ck :diffget //2 \| diffupdate<Enter>
+noremap ,cj :diffget //3 \| diffupdate<Enter>
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
 set list
