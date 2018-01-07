@@ -25,19 +25,12 @@ set lazyredraw
 set noerrorbells visualbell t_vb=
 
 " Start next line with current indentation
+set smartindent
 set autoindent
 
 " Filetype based syntax enabled
-filetype plugin on
+filetype plugin indent on
 syntax on
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" Tab configuration for specific filetypes (TODO: configure to good fits next
-" time I do C dev)
-autocmd Filetype c setlocal ts=4 sw=4 expandtab
 
 " Make backspace work like most other apps
 set backspace=2
