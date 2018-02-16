@@ -27,6 +27,8 @@ set noerrorbells visualbell t_vb=
 " Start next line with current indentation
 set smartindent
 set autoindent
+" Indent switch and case at same level
+set cinoptions+=:0
 
 " Filetype based syntax enabled
 filetype plugin indent on
@@ -150,7 +152,8 @@ function MyTabLine()
                         elseif getbufvar( b, "&buftype" ) == 'quickfix'
                                 let n .= '[Q]'
                         else
-                                let n .= pathshorten(bufname(b))
+                                "let n .= pathshorten(bufname(b))
+                                let n .= fnamemodify(bufname(b), ':t')
                         endif
                         " check and ++ tab's &modified count
                         if getbufvar( b, "&modified" )
