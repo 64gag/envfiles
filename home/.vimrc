@@ -54,6 +54,14 @@ set relativenumber ruler numberwidth=5
 " Search settings
 set ignorecase smartcase incsearch hlsearch
 
+" Splitting settings
+set splitbelow
+set splitright
+
+" Tab completion settings
+set wildmode=longest,list,full
+set wildmenu
+
 " Cancel matches highlights and redraw screen with C-C
 nnoremap <C-C> :nohlsearch<CR><C-L>
 
@@ -111,14 +119,14 @@ nnoremap <C-H> <C-W><C-H>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-set splitbelow
-set splitright
-
 " Quickly open file in same directory as current buffer
 noremap ;e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+
+" Reformat whole file with ff
+noremap  ff gggqG
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number (from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line)
