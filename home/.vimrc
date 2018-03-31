@@ -125,8 +125,8 @@ noremap ;t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-" Reformat whole file with ff
-noremap  ff gggqG
+" Reformat whole file and go back to current location with ff
+noremap  ff mlgggqG'l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number (from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line)
