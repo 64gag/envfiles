@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 try
   execute pathogen#infect()
 catch
@@ -38,7 +41,8 @@ syntax on
 set backspace=2
 
 " Remove trailing whitespaces automatically
-autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
+"autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
+" Note: disabling as it is very conflictive when collaborating
 
 " Highlight 81st column of a line
 "highlight ColorColumn ctermbg=magenta
@@ -84,7 +88,7 @@ noremap ,cj :diffget //3 \| diffupdate<Enter>
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
 set list
-set listchars=tab:\ \ ,trail:·,nbsp:~
+set listchars=tab:»-,trail:·,nbsp:~
 
 " Disable arrow keys
 inoremap <Up> <NOP>
@@ -126,7 +130,11 @@ noremap ;s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Reformat whole file and go back to current location with ff
-noremap  ff mlgggqG'l
+noremap  ;ff mlgggqG'l
+"
+" Reformat whole file and go back to current location with ff
+vnoremap  ;aft c{>}<C-R>"{/>}<Esc>
+vnoremap  ;abt c{<}<C-R>"{/<}<Esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number (from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line)
