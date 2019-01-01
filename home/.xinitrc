@@ -1,2 +1,2 @@
-setxkbmap -model pc105 -layout us,fr -variant altgr-intl, -option -option lv3:ralt_switch -option terminate:ctrl_alt_bksp -option grp:alt_shift_toggle
+#!/bin/sh
 exec startlxde
