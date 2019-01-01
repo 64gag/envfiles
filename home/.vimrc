@@ -24,6 +24,12 @@ set autowrite
 " Less actions trigger a redraw of the screen
 set lazyredraw
 
+" Do not use the TAB character (expand it)
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set shiftround
+
 " Disable unwelcomed beeps
 set noerrorbells visualbell t_vb=
 
@@ -88,7 +94,7 @@ noremap ,cj :diffget //3 \| diffupdate<Enter>
 
 " Make tabs, trailing whitespace, and non-breaking spaces visible
 set list
-set listchars=tab:»-,trail:·,nbsp:~
+set listchars=tab:»\ ,trail:·,nbsp:~
 
 " Disable arrow keys
 inoremap <Up> <NOP>
