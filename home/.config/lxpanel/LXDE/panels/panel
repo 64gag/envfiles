@@ -22,7 +22,7 @@ Global {
 Plugin {
   type=taskbar
   Config {
-    tooltips=1
+    tooltips=0
     IconsOnly=0
     AcceptSkipPager=1
     ShowIconified=1
