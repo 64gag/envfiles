@@ -13,6 +13,7 @@ rsync -avH "$(pwd)/" -e ssh "${TARGET}:~/${BASENAME_PWD}" \
 	--exclude '*.log' \
 	--exclude '*.db' \
 	--exclude '*_exec' \
+	--exclude '*_app' \
 	--exclude 'build' \
 	--exclude '.git' \
 	--exclude 'dist' \

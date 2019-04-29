@@ -36,6 +36,10 @@ set noerrorbells visualbell t_vb=
 " Start next line with current indentation
 set smartindent
 set autoindent
+" Do not indent namespaces
+set cinoptions+=N-s
+" Initialization list
+set cinoptions+=i-s
 " Indent switch and case at same level
 set cinoptions+=:0
 
@@ -137,10 +141,18 @@ noremap ;v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Reformat whole file and go back to current location with ff
 noremap  ;ff mlgggqG'l
-"
+
 " Reformat whole file and go back to current location with ff
 vnoremap  ;aft c{>}<C-R>"{/>}<Esc>
 vnoremap  ;abt c{<}<C-R>"{/<}<Esc>
+
+" Run clang-format on the current buffer (save before!), replace buffer with output
+noremap <F1> :%! clang-format -style=file %<CR>
+
+let @f = 'c{>}lPa{/>}'
+let @g = 'c[>]lPa[/>]'
+let @b = 'c{<}lPa{/<}'
+let @n = 'c[<]lPa[/<]'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number (from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line)
