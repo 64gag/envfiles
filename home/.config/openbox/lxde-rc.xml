@@ -6,9 +6,8 @@
     <keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind>
     <keybind key="A-Tab"><action name="NextWindow"><finalactions><action name="Focus"/><action name="Raise"/><action name="Unshade"/></finalactions></action></keybind>
     <keybind key="A-S-Tab"><action name="PreviousWindow"><finalactions><action name="Focus"/><action name="Raise"/><action name="Unshade"/></finalactions></action></keybind>
-    <keybind key="Print"><action name="Execute"><command>scrot -s</command></action></keybind>
-    <keybind key="A-Print"><action name="Execute"><command>lxsession-default screenshot</command></action></keybind>
-    <keybind key="W-r"><action name="Execute"><command>lxsession-default launcher</command></action></keybind>
+    <keybind key="Print"><action name="Execute"><command>~/.local/bin/pa-screenshot.sh</command></action></keybind>
+    <keybind key="A-Print"><action name="Execute"><command>scrot -s</command></action></keybind>
     <keybind key="A-F12"><action name="Execute"><command>lxsession-default launcher</command></action></keybind>
     <keybind key="C-F7"><action name="Execute"><command>xset dpms force off</command></action></keybind>
     <keybind key="C-F10"><action name="Execute"><command>xbacklight -dec 10</command></action></keybind>
@@ -28,32 +27,33 @@
 
     <!-- Desktop switching -->
     <keybind key="W-h"><action name="Desktop"><desktop>1</desktop></action></keybind>
-    <keybind key="W-j"><action name="Desktop"><desktop>3</desktop></action></keybind>
-    <keybind key="W-k"><action name="Desktop"><desktop>4</desktop></action></keybind>
-    <keybind key="W-l"><action name="Desktop"><desktop>2</desktop></action></keybind>
+    <keybind key="W-j"><action name="Desktop"><desktop>2</desktop></action></keybind>
+    <keybind key="W-k"><action name="Desktop"><desktop>3</desktop></action></keybind>
+    <keybind key="W-l"><action name="Desktop"><desktop>4</desktop></action></keybind>
     <keybind key="S-W-h"><action name="SendToDesktop"><desktop>1</desktop></action></keybind>
-    <keybind key="S-W-j"><action name="SendToDesktop"><desktop>3</desktop></action></keybind>
-    <keybind key="S-W-k"><action name="SendToDesktop"><desktop>4</desktop></action></keybind>
-    <keybind key="S-W-l"><action name="SendToDesktop"><desktop>2</desktop></action></keybind>
+    <keybind key="S-W-j"><action name="SendToDesktop"><desktop>2</desktop></action></keybind>
+    <keybind key="S-W-k"><action name="SendToDesktop"><desktop>3</desktop></action></keybind>
+    <keybind key="S-W-l"><action name="SendToDesktop"><desktop>4</desktop></action></keybind>
     <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
 
     <!-- Running applications -->
-    <keybind key="W-a"><action name="Execute"><command>lxsession-default audio_player</command><focus>yes</focus></action></keybind>
-    <keybind key="W-b"><action name="Execute"><command>lxsession-default webbrowser</command><focus>yes</focus></action></keybind>
-    <keybind key="W-c"><action name="Execute"><command>lxsession-default calculator</command></action></keybind>
-    <keybind key="W-f"><action name="Execute"><command>lxsession-default file_manager</command><focus>yes</focus></action></keybind>
-    <!-- keybind key="W-a"><action name="Execute"><command>lxterminal -e /home/aguiarp/git/perso/anki4programmers/anki/quick-note.sh</command></action></keybind -->
-    <keybind key="W-q"><action name="Execute"><command>lxterminal -e /home/aguiarp/perso/git/anki4programmers/tools/import/quick-note.sh</command><focus>yes</focus></action></keybind>
-    <keybind key="W-w"><action name="Execute"><command>/home/aguiarp/perso/git/anki4programmers/tools/import/quick-note-image.sh</command><focus>yes</focus></action></keybind>
-    <keybind key="W-s"><action name="Execute"><command>lxsession-default quit</command><focus>yes</focus></action></keybind>
-    <keybind key="W-t"><action name="Execute"><command>lxsession-default terminal</command><focus>yes</focus></action></keybind>
+    <keybind key="W-a"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh audio_player</command><focus>yes</focus></action></keybind>
+    <keybind key="W-b"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh web_browser</command><focus>yes</focus></action></keybind>
+    <keybind key="W-c"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh calculator</command><focus>yes</focus></action></keybind>
+    <keybind key="W-f"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh file_manager</command><focus>yes</focus></action></keybind>
+    <keybind key="W-s"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh quit</command><focus>yes</focus></action></keybind>
+    <keybind key="W-t"><action name="Execute"><command>~/.local/bin/pa-default-apps.sh terminal</command><focus>yes</focus></action></keybind>
+    <keybind key="W-r"><action name="Execute"><command>lxsession-default launcher</command><focus>yes</focus></action></keybind>
     <keybind key="W-v"><action name="Execute"><command>virtualbox</command><focus>yes</focus></action></keybind>
-    <keybind key="Print"><action name="Execute"><command>~/git/dotfiles/scripts/screenshot</command></action></keybind>
+
+    <!-- Notes -->
+    <keybind key="W-q"><action name="Execute"><command>~/.local/bin/quick-note.sh</command><focus>yes</focus></action></keybind>
+    <keybind key="W-w"><action name="Execute"><command>~/.local/bin/quick-note-image.sh</command><focus>yes</focus></action></keybind>
 
     <!-- Volume control -->
-    <keybind key="W-n"><action name="Execute"><command>~/.local/bin/sound-pactl-volume-decrease.sh</command></action></keybind>
-    <keybind key="S-W-n"><action name="Execute"><command>~/.local/bin/sound-pactl-volume-increase.sh</command></action></keybind>
-    <keybind key="W-m"><action name="Execute"><command>~/.local/bin/sound-pactl-mute-toggle.sh</command></action></keybind>
+    <keybind key="W-n"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-volume-decrease.sh</command></action></keybind>
+    <keybind key="S-W-n"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-volume-increase.sh</command></action></keybind>
+    <keybind key="W-m"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-mute-toggle.sh</command></action></keybind>
 
     <!-- Avoid touching the mouse -->
     <keybind key="C-W-h"><action name="Execute"><command>xwit -root -rwarp -100 0</command></action></keybind>
