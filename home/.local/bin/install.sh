@@ -5,4 +5,4 @@ dir_script=$(realpath $(dirname "$0"))
 cd "$dir_script"
 
 chmod +x *.sh
-ln -s $dir_script/*.sh ~/.local/bin/
+ln -s $dir_script/pa-*.sh ~/.local/bin/
