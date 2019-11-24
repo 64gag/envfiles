@@ -1,2 +1,0 @@
-aguiarp@aguiarp:~/git/dotfiles$ chmod +x home/.local/bin/*
-aguiarp@aguiarp:~/git/dotfiles$ ln -s ~/git/dotfiles/home/.local/bin/* ~/.local/bin/
