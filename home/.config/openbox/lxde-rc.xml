@@ -14,11 +14,11 @@
     <keybind key="C-F11"><action name="Execute"><command>xbacklight -inc 10</command></action></keybind>
 
     <!-- Window tiling -->
+    <keybind key="W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>center</x><y>center</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # MiddleScreen -->
+    <keybind key="W-i"><action name="MoveResizeTo"><monitor>next</monitor></action><action name="Maximize"/></keybind><!-- # FullScreen -->
     <keybind key="W-Up"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # HalfUpperScreen -->
     <keybind key="W-Down"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # HalfLowerScreen -->
     <keybind key="W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>50%</width><height>100%</height><monitor>next</monitor></action></keybind><!-- # HalfLeftScreen -->
-    <keybind key="W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>center</x><y>center</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # MiddleScreen -->
-    <keybind key="W-i"><action name="UnmaximizeFull" /><action name="MoveResizeTo"><x>center</x><y>center</y><width>50%</width><height>50%</height><monitor>next</monitor></action><action name="Maximize" /></keybind><!-- # FullScreen -->
     <keybind key="W-o"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>0</y><width>50%</width><height>100%</height><monitor>next</monitor></action></keybind><!-- # HalfRightScreen -->
     <keybind key="S-W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # UpperQuarterLeft -->
     <keybind key="S-W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # LowerQuarterLeft -->
