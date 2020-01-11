@@ -2,6 +2,7 @@
 
 dir_script=$(realpath $(dirname "$0"))
 file_name_target=~/.config/openbox/lxde-rc.xml
+#file_name_target=~/.config/openbox/lubuntu-rc.xml
 
 cd "$dir_script"
 

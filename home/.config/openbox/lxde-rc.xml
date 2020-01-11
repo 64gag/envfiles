@@ -14,16 +14,16 @@
     <keybind key="C-F11"><action name="Execute"><command>xbacklight -inc 10</command></action></keybind>
 
     <!-- Window tiling -->
-    <keybind key="W-Up"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height></action></keybind><!-- # HalfUpperScreen -->
-    <keybind key="W-Down"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action></keybind><!-- # HalfLowerScreen -->
-    <keybind key="W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>50%</width></action></keybind><!-- # HalfLeftScreen -->
-    <keybind key="W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>center</x><y>center</y><width>50%</width><height>50%</height></action></keybind><!-- # MiddleScreen -->
-    <keybind key="W-i"><action name="Maximize"/></keybind><!-- # FullScreen -->
-    <keybind key="W-o"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>50%</width></action></keybind><!-- # HalfRightScreen -->
-    <keybind key="S-W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><height>50%</height><width>50%</width></action></keybind><!-- # UpperQuarterLeft -->
-    <keybind key="S-W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><height>50%</height><width>50%</width></action></keybind><!-- # LowerQuarterLeft -->
-    <keybind key="S-W-i"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>-0</y><height>50%</height><width>50%</width></action></keybind><!-- # LowerQuarterRight -->
-    <keybind key="S-W-o"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>0</y><height>50%</height><width>50%</width></action></keybind><!-- # UpperQuarterRight -->
+    <keybind key="W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>center</x><y>center</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # MiddleScreen -->
+    <keybind key="W-i"><action name="MoveResizeTo"><monitor>next</monitor></action><action name="Maximize"/></keybind><!-- # FullScreen -->
+    <keybind key="W-Up"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # HalfUpperScreen -->
+    <keybind key="W-Down"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # HalfLowerScreen -->
+    <keybind key="W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>50%</width><height>100%</height><monitor>next</monitor></action></keybind><!-- # HalfLeftScreen -->
+    <keybind key="W-o"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>0</y><width>50%</width><height>100%</height><monitor>next</monitor></action></keybind><!-- # HalfRightScreen -->
+    <keybind key="S-W-y"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # UpperQuarterLeft -->
+    <keybind key="S-W-u"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>0</x><y>-0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # LowerQuarterLeft -->
+    <keybind key="S-W-i"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>-0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # LowerQuarterRight -->
+    <keybind key="S-W-o"><action name="UnmaximizeFull"/><action name="MoveResizeTo"><x>-0</x><y>0</y><width>50%</width><height>50%</height><monitor>next</monitor></action></keybind><!-- # UpperQuarterRight -->
 
     <!-- Desktop switching -->
     <keybind key="W-h"><action name="Desktop"><desktop>1</desktop></action></keybind>
@@ -54,6 +54,10 @@
     <keybind key="W-n"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-volume-decrease.sh</command></action></keybind>
     <keybind key="S-W-n"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-volume-increase.sh</command></action></keybind>
     <keybind key="W-m"><action name="Execute"><command>~/.local/bin/pa-sound-pactl-mute-toggle.sh</command></action></keybind>
+
+    <!-- Monitor control -->
+    <keybind key="XF86Display"><action name="Execute"><command>~/.local/bin/monitor-configure.sh</command></action></keybind>
+    <keybind key="W-p"><action name="Execute"><command>~/.local/bin/monitor-configure.sh</command></action></keybind>
 
     <!-- Avoid touching the mouse -->
     <keybind key="C-W-h"><action name="Execute"><command>xwit -root -rwarp -100 0</command></action></keybind>
