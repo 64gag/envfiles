@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cd $(dirname $0)
 dir_script=$(pwd)
 
 chmod +x *.sh
