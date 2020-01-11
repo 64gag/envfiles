@@ -112,7 +112,6 @@ noremap <Right> <NOP>
 
 " Map , to :
 noremap  , :
-noremap  : ,
 
 " Exit insert mode with jk!
 inoremap jk <Esc>
@@ -139,20 +138,21 @@ noremap ;t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;s :split <C-R>=expand("%:p:h") . "/" <CR>
 noremap ;v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-" Reformat whole file and go back to current location with ff
-noremap  ;ff mlgggqG'l
+"noremap ;c :vsplit %<.c
+noremap ;h :vsplit %<.h
 
 " Reformat whole file and go back to current location with ff
-vnoremap  ;aft c{>}<C-R>"{/>}<Esc>
-vnoremap  ;abt c{<}<C-R>"{/<}<Esc>
+noremap  ;ff mlgggqG'l
 
 " Run clang-format on the current buffer (save before!), replace buffer with output
 noremap <F1> :%! clang-format -style=file %<CR>
 
-let @f = 'c{>}lPa{/>}'
-let @g = 'c[>]lPa[/>]'
-let @b = 'c{<}lPa{/<}'
-let @n = 'c[<]lPa[/<]'
+let @f = 'c{>}"{/>}'
+let @g = 'c[>]"[/>]'
+let @h = 'c[>c]"[/>c]'
+let @b = 'c{<}"{/<}'
+let @n = 'c[<]"[/<]'
+let @m = 'c[<c]"[/<c]'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show tab number (from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line)
