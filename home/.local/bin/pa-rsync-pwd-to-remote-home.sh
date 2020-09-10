@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Usage example:"
-echo "TARGET=sim@sim-core.local rsync_pwd_to_remote_home.doc.sh"
+echo "TARGET=sim@sim-core.local $0"
 echo ""
 
 BASENAME_PWD=$(basename "$(pwd)")
@@ -14,7 +14,7 @@ rsync -avH "$(pwd)/" -e ssh "${TARGET}:~/${BASENAME_PWD}" \
 	--exclude '*.db' \
 	--exclude '*_exec' \
 	--exclude '*_app' \
-	--exclude 'build' \
+	--exclude 'build*/' \
 	--exclude '.git' \
 	--exclude 'dist' \
 	--exclude 'mission_ATS_aller.json' \
