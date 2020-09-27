@@ -1,4 +1,4 @@
-# Source this file at the bottom of ~/.bashrc
+# Add to the bottom of ~/.bashrc
 # source ~/git/dotfiles/home/.bashrc
 
 alias v='vim'
