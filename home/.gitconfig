@@ -1,0 +1,15 @@
+[user]
+	name = Pedro Aguiar
+	email = paguiar@protonmail.com
+[credential]
+	helper = cache
+[alias]
+	lg = log --decorate --graph --oneline
+	lga = log --all --decorate --graph --oneline
+	st = status -b --short
+	lsm = ls-files -m
+	diffm = diff --diff-filter=M
+	subu = submodule update --init --recursive
+[core]
+	excludesfile = ~/.cvsignore
+	pager = less -x1,5
