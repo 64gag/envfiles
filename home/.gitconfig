@@ -13,3 +13,4 @@
 [core]
 	excludesfile = ~/.cvsignore
 	pager = less -x1,5
+    editor = vim
