@@ -1,5 +1,5 @@
 .PHONY: all
-all: install_local_bin install_lxde_rc
+all: install_local_bin
 
 .PHONY: install_local_bin
 install_local_bin:

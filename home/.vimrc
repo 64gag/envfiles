@@ -6,32 +6,19 @@ try
 catch
 endtry
 
-" Drop VI compatibility
-set nocompatible
-
-" Brightside settings for backups and swaps!
-set nobackup nowritebackup noswapfile
-
-" Do not keep buffers of closed tabs
-set nohidden
-
-" Shows commands you are typing
-set showcmd
-
-" Write changes before running make
-set autowrite
-
-" Less actions trigger a redraw of the screen
-set lazyredraw
+set nocompatible " Drop VI compatibility
+set nobackup nowritebackup noswapfile " Brightside settings
+set nohidden " Do not keep buffers of closed tabs
+set showcmd " Shows commands you are typing
+set autowrite " Write changes before running make
+set lazyredraw " Less actions trigger a redraw of the screen
+set noerrorbells visualbell t_vb= " Disable sounds
 
 " Do not use the TAB character (expand it)
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set shiftround
-
-" Disable unwelcomed beeps
-set noerrorbells visualbell t_vb=
 
 " Start next line with current indentation
 set smartindent
@@ -47,30 +34,23 @@ set cinoptions+=:0
 filetype plugin indent on
 syntax on
 
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Make backspace work like most other apps
 set backspace=2
-
-" Remove trailing whitespaces automatically
-"autocmd BufRead * if ! &bin | silent! %s/\s\+$//ge | endif
-" Note: disabling as it is very conflictive when collaborating
 
 " Highlight 81st column of a line
 "highlight ColorColumn ctermbg=magenta
 "autocmd BufNewFile,BufRead * call matchadd('ColorColumn', '\%81v', 100)
 
-" Highlight column and line
-set cursorcolumn
-set cursorline
+set cursorcolumn cursorline " Highlight column and line
 
 " Display current row, col and line numbers
 set relativenumber ruler numberwidth=5
 
-" Search settings
 set ignorecase smartcase incsearch hlsearch
-
-" Splitting settings
-set splitbelow
-set splitright
+set splitbelow splitright
 
 " Tab completion settings
 set wildmode=longest,list,full
@@ -308,4 +288,10 @@ if has("cscope")
     noremap <C-@><C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>zz
     noremap <C-@><C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>zz
     noremap <C-@><C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>zz
+endif
+
+if exists('_lang')
+  let &spelllang = _lang
+  set spell
+  syntax off
 endif

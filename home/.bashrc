@@ -1,10 +1,8 @@
 # Add to the bottom of ~/.bashrc
 # source ~/git/dotfiles/home/.bashrc
 
-alias v='vim'
-alias g='git'
-alias r='rails'
-alias t='gnome-terminal'
+vimw() { local _lang=$1; shift; vim --cmd "let _lang='${_lang}'" $@; }
+
 alias psc='ps xawf -eo pid,user,cgroup,args'
 alias cmakedebug='cmake $1 -DCMAKE_BUILD_TYPE=DEBUG'
 alias cmakerelease='cmake $1 -DCMAKE_BUILD_TYPE=RELEASE'
