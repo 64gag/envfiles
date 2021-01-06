@@ -1,11 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-try
-  execute pathogen#infect()
-catch
-endtry
-
 set nocompatible " Drop VI compatibility
 set nobackup nowritebackup noswapfile " Brightside settings
 set nohidden " Do not keep buffers of closed tabs
