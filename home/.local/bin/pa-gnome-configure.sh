@@ -23,6 +23,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>i']"
 gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>u']"
+gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
 #gsettings set org.gnome.desktop.wm.keybindings move-to-side-w "['<Super>y']"
 #gsettings set org.gnome.desktop.wm.keybindings move-to-side-s "['<Super>u']"
 #gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "['<Super>i']"
@@ -32,14 +33,18 @@ gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>u']"
 #gsettings set org.gnome.desktop.wm.keybindings move-to-corner-se "['<Super><Shift>i']"
 #gsettings set org.gnome.desktop.wm.keybindings move-to-corner-ne "['<Super><Shift>o']"
 
-gsettings reset-recursively org.gnome.desktop.interface
-gsettings set org.gnome.desktop.interface clock-show-date true
-
 gsettings reset-recursively org.gnome.desktop.background
 gsettings set org.gnome.desktop.background show-desktop-icons true
 
 gsettings reset-recursively org.gnome.desktop.input-sources
+gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')]"
+
+gsettings reset-recursively org.gnome.desktop.interface
+gsettings set org.gnome.desktop.interface clock-show-date true
+
+gsettings reset-recursively org.gnome.desktop.session
+gsettings set org.gnome.desktop.session idle-delay 600
 
 gsettings reset-recursively org.gnome.mutter
 gsettings set org.gnome.mutter dynamic-workspaces false
@@ -47,6 +52,13 @@ gsettings set org.gnome.mutter workspaces-only-on-primary false
 
 gsettings reset-recursively org.gnome.shell
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+gsettings reset-recursively org.gnome.settings-daemon.plugins.power
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 1200
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 900
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
 
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
