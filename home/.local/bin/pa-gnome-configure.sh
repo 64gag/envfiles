@@ -52,6 +52,21 @@ gsettings set org.gnome.mutter workspaces-only-on-primary false
 
 gsettings reset-recursively org.gnome.shell
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop']"
+gsettings set org.gnome.shell.keybindings focus-active-notification "['']"
+gsettings set org.gnome.shell.keybindings open-application-menu "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-1 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-2 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-3 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-4 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-5 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-6 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-7 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-8 "['']"
+gsettings set org.gnome.shell.keybindings switch-to-application-9 "['']"
+gsettings set org.gnome.shell.keybindings toggle-application-view "['']"
+gsettings set org.gnome.shell.keybindings toggle-message-tray "['']"
+gsettings set org.gnome.shell.keybindings toggle-overview "['']"
 
 gsettings reset-recursively org.gnome.settings-daemon.plugins.power
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
@@ -65,10 +80,9 @@ function join_by { local IFS="$1"; shift; echo "$*"; }
 function media_keys_custom_keybindings_reset() {
     gsettings reset-recursively org.gnome.settings-daemon.plugins.media-keys
 
-    #gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['XF86AudioMute', '<Super>m']"
-    #gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['XF86AudioMute', '<Super>m']"
-    #gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute 'XF86AudioMute'
-    #gsettings get org.gnome.settings-daemon.plugins.media-keys volume-mute
+    gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['XF86AudioMute', '<Super>m']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute-static "['XF86AudioMicMute', '<Super><Shift>m']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['XF86AudioMicMute', '<Super><Shift>m']"
 
     custom_keybindings_names=()
     custom_keybindings_command=()
@@ -118,3 +132,5 @@ media_keys_custom_keybindings_add "nautilus" "nautilus -w" "'<Super>f'"
 media_keys_custom_keybindings_add "pavucontrol" "pavucontrol" "'<Super>a'"
 media_keys_custom_keybindings_add "firefox" "firefox" "'<Super>b'"
 media_keys_custom_keybindings_apply
+
+gnome-extensions enable putWindow@clemens.lab21.org
