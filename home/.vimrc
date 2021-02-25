@@ -120,7 +120,8 @@ noremap ;h :vsplit %<.h
 noremap  ;ff mlgggqG'l
 
 " Run clang-format on the current buffer (save before!), replace buffer with output
-noremap <F1> :%! clang-format -style=file %<CR>
+"noremap <F1> :%! clang-format -style=file %<CR>
+"map <F1> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 let @f = 'c{>}"{/>}'
 let @g = 'c[>]"[/>]'

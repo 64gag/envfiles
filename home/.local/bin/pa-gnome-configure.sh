@@ -42,6 +42,7 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')
 
 gsettings reset-recursively org.gnome.desktop.interface
 gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.interface enable-animations false
 
 gsettings reset-recursively org.gnome.desktop.session
 gsettings set org.gnome.desktop.session idle-delay 600
