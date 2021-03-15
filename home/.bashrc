@@ -17,6 +17,7 @@ bind '"\e[B":history-search-forward'
 
 export DEBEMAIL="paguiar@protonmail.com"
 export PATH="$PATH:$HOME/.local/bin"
+export EDITOR=vim
 
 if [ -f  ~/.rvm/scripts/rvm ]; then
     export PATH="$PATH:$HOME/.rvm/bin"
