@@ -15,6 +15,7 @@ alias vimp='vim -u NONE -c "helptags doc" -c q'
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+export DEBEMAIL="paguiar@protonmail.com"
 export PATH="$PATH:$HOME/.local/bin"
 
 if [ -f  ~/.rvm/scripts/rvm ]; then
