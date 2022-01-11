@@ -3,3 +3,4 @@ TODO
 compile_commands.json
 cscope.out
 build*/
+.vimsession*
