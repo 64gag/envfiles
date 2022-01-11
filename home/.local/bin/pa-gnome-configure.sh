@@ -38,7 +38,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons true
 
 gsettings reset-recursively org.gnome.desktop.input-sources
 gsettings set org.gnome.desktop.input-sources show-all-sources true
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')]"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl'), ('xkb', 'fr+oss')]"
 
 gsettings reset-recursively org.gnome.desktop.interface
 gsettings set org.gnome.desktop.interface clock-show-date true
