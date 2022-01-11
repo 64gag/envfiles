@@ -15,7 +15,8 @@ alias vimp='vim -u NONE -c "helptags doc" -c q'
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-export DEBEMAIL="paguiar@protonmail.com"
+export DEBEMAIL="gael.aguiar@kymasoft.com"
+export DEBFULLNAME="Gael Aguiar"
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=vim
 
