@@ -33,7 +33,7 @@ tar -cvpzf ${backup_file} \
 --exclude=/usr/src/linux-headers* \
 /
 
-echo "Backup file created in '${backup_dir}/${backup_file}'"
-du -sh "${backup_dir}/${backup_file}"
+echo "Backup file created in '${backup_file}'"
+du -sh "${backup_file}"
 echo "You may want to move it to '${backup_dir_final}'?"
-echo "mv '${backup_dir}/${backup_file}' '${backup_dir_final}'"
+echo "mv '${backup_file}' '${backup_dir_final}'"
