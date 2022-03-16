@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "$0")"
-pactl set-sink-mute $(./pa-sound-pactl-get-current-sink.sh) toggle
+pactl set-sink-mute $(./64gag-sound-pactl-get-current-sink.doc.sh) toggle
