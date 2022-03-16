@@ -13,7 +13,7 @@ ffmpeg_audio_pid=$!
 ffmpeg -vaapi_device /dev/dri/renderD128 -f x11grab -video_size 1920x1080 -i :0 -vf 'hwupload,scale_vaapi=format=nv12' -c:v h264_vaapi -qp 24 "${name_basename}-screen.avi" &
 ffmpeg_screen_pid=$!
 
-ffmpeg -vaapi_device /dev/dri/renderD128 -f v4l2 -video_size 640x480 -i /dev/video0 -vf 'format=nv12,hwupload' -c:v h264_vaapi "${name_basename}-cam.avi" &
+#ffmpeg -vaapi_device /dev/dri/renderD128 -f v4l2 -video_size 640x480 -i /dev/video0 -vf 'format=nv12,hwupload' -c:v h264_vaapi "${name_basename}-cam.avi" &
 ffmpeg_cam_pid=$!
 
 
