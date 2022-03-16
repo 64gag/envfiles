@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir ~/.local/bin/
+mkdir -p ~/.local/bin/
 
 # TODO Make sure this script is executed from a given location
 
