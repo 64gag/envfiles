@@ -5,3 +5,4 @@ build*/
 octave-workspace
 tmp*
 .tmp*
+*.swp
