@@ -5,12 +5,11 @@ script_name=$(basename "$0")
 backup_dir="/tmp"
 
 exclude_values=(/bin /sbin /boot /dev /proc /sys /run /media /mnt /usr /lib* /snap /var/cache /var/lib /var/log)
-exclude_values+=(/home/*/.gvfs /home/*/.cache /home/*/.local/share/Trash /lost+found)
+exclude_values+=(/root/.cache /home/*/.cache /home/*/.gvfs /home/*/.local/share/Trash /lost+found)
 exclude_values+=(/tmp)
 
 date=$(date "+%F-%H-%M-%S")
 description="gag-backup"
-backup_name="${HOSTNAME}-${description}"
 
 # NOTE: all the parameters up to this point can be modified in the following sourced file
 
@@ -18,6 +17,16 @@ conf_file=/etc/gag/${script_name}.conf
 if [ -f "${conf_file}" ]; then
     source "${conf_file}"
 fi
+
+# Use final values of these variables!! (after the `source "${conf_file}"` above)
+backup_name="${HOSTNAME}-${description}"
+exclude_values+=(${backup_dir})
+
+exclude_arguments=()
+for item in "${exclude_values[@]}"; do
+    exclude_arguments+=("--exclude")
+    exclude_arguments+=("$item")
+done
 
 if [ -z "${PASSPHRASE+x}" ]; then # duplicity uses PASSPHRASE so we just play along
     echo -n "Enter encryption key: "
@@ -34,14 +43,6 @@ if [ -z "${PASSPHRASE+x}" ]; then # duplicity uses PASSPHRASE so we just play al
 
     export PASSPHRASE
 fi
-
-exclude_values+=(${backup_dir}) # Exclude the final value of this variable
-
-exclude_arguments=()
-for item in "${exclude_values[@]}"; do
-    exclude_arguments+=("--exclude")
-    exclude_arguments+=("$item")
-done
 
 # Actual action begins
 mkdir -p "${backup_dir}"
