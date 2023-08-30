@@ -9,12 +9,12 @@ exclude_values+=(/home/*/.gvfs /home/*/.cache /home/*/.local/share/Trash /lost+f
 exclude_values+=(/tmp)
 
 date=$(date "+%F-%H-%M-%S")
-description="64gag-backup"
+description="gag-backup"
 backup_name="${HOSTNAME}-${description}"
 
 # NOTE: all the parameters up to this point can be modified in the following sourced file
 
-conf_file=/etc/64gag/${script_name}.conf
+conf_file=/etc/gag/${script_name}.conf
 if [ -f "${conf_file}" ]; then
     source "${conf_file}"
 fi
@@ -50,7 +50,7 @@ if [[ "${backup_tool}" == "duplicity" ]]; then
     exclude_arguments+=("--exclude")
     exclude_arguments+=(**/tmp*) # TODO confirm this works
 
-    duplicity --verbosity Info --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
+    time duplicity --verbosity Info --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
 else
     exclude_arguments+=("--exclude")
     exclude_arguments+=(tmp*) # duplicity does not like this syntax...
