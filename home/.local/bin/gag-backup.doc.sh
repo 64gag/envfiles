@@ -50,7 +50,7 @@ if [[ "${backup_tool}" == "duplicity" ]]; then
     exclude_arguments+=("--exclude")
     exclude_arguments+=(**/tmp*) # TODO confirm this works
 
-    time duplicity --verbosity Info --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
+    time duplicity --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
 else
     exclude_arguments+=("--exclude")
     exclude_arguments+=(tmp*) # duplicity does not like this syntax...
