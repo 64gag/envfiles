@@ -44,14 +44,15 @@ if [ -z "${PASSPHRASE+x}" ]; then # duplicity uses PASSPHRASE so we just play al
     export PASSPHRASE
 fi
 
-# Actual action begins
+echo "StartTime $(date +%s.%2N) ($(date '+%a %b %d %H:%M:%S %Y'))"
+
 mkdir -p "${backup_dir}"
 
 if [[ "${backup_tool}" == "duplicity" ]]; then
     exclude_arguments+=("--exclude")
-    exclude_arguments+=(**/tmp*) # TODO confirm this works
+    exclude_arguments+=("**/tmp*")
 
-    time duplicity --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
+    duplicity --full-if-older-than 1M --archive-dir "${backup_dir}" --name "${backup_name}" "${exclude_arguments[@]}" / "${duplicity_target_url}"
 else
     exclude_arguments+=("--exclude")
     exclude_arguments+=(tmp*) # duplicity does not like this syntax...
@@ -80,3 +81,5 @@ else
 
     split -b 200M "${backup_tar_encrypted_file}" "${backup_tar_encrypted_file}_part_"
 fi
+
+echo "EndTime $(date +%s.%2N) ($(date '+%a %b %d %H:%M:%S %Y'))"
