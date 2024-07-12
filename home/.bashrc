@@ -1,10 +1,10 @@
 # Add to the bottom of ~/.bashrc
-# source ~/git/dotfiles/home/.bashrc
+# source ~/git/envfiles/home/.bashrc
 
 vimw() { local _lang=$1; shift; vim --cmd "let _lang='${_lang}'" $@; }
 
-# https://www.atlassian.com/git/tutorials/dotfiles
-#alias cfgit='/usr/bin/git --git-dir=$HOME/git/dotfiles/.git --work-tree=$HOME'
+# https://www.atlassian.com/git/tutorials/envfiles
+#alias cfgit='/usr/bin/git --git-dir=$HOME/git/envfiles/.git --work-tree=$HOME'
 
 alias psc='ps xawf -eo pid,user,cgroup,args'
 alias cmakedebug='cmake $1 -DCMAKE_BUILD_TYPE=DEBUG'
