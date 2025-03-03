@@ -37,7 +37,7 @@ case $action in
         ;;
     open)
         mkdir "${horse_mnt_dir}"
-        cryptsetup luksOpen "${horse_file}" "${horse_unique}" && mount "${horse_container_dir}" "${horse_mnt_dir}"
+        cryptsetup luksOpen "${horse_file}" "${horse_unique}" && mount "${horse_container_dir}" "${horse_mnt_dir}" && chmod go-rwx "${horse_mnt_dir}"
         ;;
     close)
         umount "${horse_mnt_dir}" && cryptsetup luksClose "${horse_unique}" && rm -r "${horse_mnt_dir}"
