@@ -148,7 +148,7 @@ function media_keys_custom_keybindings_apply() {
 }
 
 media_keys_custom_keybindings_reset
-media_keys_custom_keybindings_add "terminal" "gnome-terminal" "'<Super>t'"
+media_keys_custom_keybindings_add "terminal" "ptyxis --new-window" "'<Super>t'"
 media_keys_custom_keybindings_add "calculator" "gnome-calculator" "'<Super>c'"
 media_keys_custom_keybindings_add "nautilus" "nautilus -w" "'<Super>f'"
 #media_keys_custom_keybindings_add "pavucontrol" "pavucontrol" "'<Super>a'"
