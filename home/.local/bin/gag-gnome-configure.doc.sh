@@ -105,6 +105,7 @@ function media_keys_custom_keybindings_reset() {
     gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['XF86AudioMute', '<Super>m']"
     gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute-static "['XF86AudioMicMute', '<Super><Shift>m']"
     gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['XF86AudioMicMute', '<Super><Shift>m']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Super>x']"
 
     custom_keybindings_names=()
     custom_keybindings_command=()
